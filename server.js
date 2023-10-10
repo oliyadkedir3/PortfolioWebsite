@@ -49,7 +49,7 @@ router.post("/contact", (req, res) => {
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json(error);
+      res.json("The error", error);
     } else {
       console.log("Message sent");
       res.json({ code: 200, status: "Message Sent" });
