@@ -146,6 +146,12 @@ section {
   margin: 2%;
 }
 
+.response-message {
+  position: relative;
+  font-size: 40px;
+  color: green;
+  margin-top: 30px;
+}
 .btn-box .btn:hover {
   color: var(--main-color);
 }

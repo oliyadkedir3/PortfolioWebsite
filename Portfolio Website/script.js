@@ -34,3 +34,39 @@ header.classList.toggle('sticky',window.scrollY> 100);
  menuIcon.classList.remove('bx-x');
  navbar.classList.remove('active');
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const responseMessage = document.querySelector(".response-message");
+
+  form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+
+      const formData = new FormData(form);
+
+      // Send the form data to the server using Fetch API
+      fetch(form.action, {
+          method: "POST",
+          body: formData,
+      })
+          .then((response) => response.json()) // Assuming the server responds with JSON
+          .then((data) => {
+              // Handle the server response
+              if (data.code === 200) {
+                  responseMessage.textContent = "Message sent successfully!";
+                  responseMessage.classList.remove("error");
+                  responseMessage.classList.add("success");
+              } else {
+                  responseMessage.textContent = "Error sending message. Please try again.";
+                  responseMessage.classList.remove("success");
+                  responseMessage.classList.add("error");
+              }
+          })
+          .catch((error) => {
+              console.error("Error:", error);
+              responseMessage.textContent = "An error occurred. Please try again later.";
+              responseMessage.classList.remove("success");
+              responseMessage.classList.add("error");
+          });
+  });
+});

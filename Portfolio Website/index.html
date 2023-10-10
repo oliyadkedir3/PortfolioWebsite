@@ -157,31 +157,34 @@
     <p><b>Phone Number:</b> 0912258272</p>
     <p><b>Email:</b> oliyadoba@gmail.com</p>
   </div>
-    <form action="a">
-      <div class="input-box">
-        <div class="input-field">
-          <input type="text" placeholder="full Name" required>
-          <span class="focus"></span>
-        </div>
-        <div class="input-field">
-          <input type="number" placeholder="Mobile Number" required>
-          <span class="focus"></span>
-      </div>
-      <div class="input-field">
-        <input type="text" placeholder="Email Address" required>
-        <span class="focus"></span>
-        </div>
-        <div class="input-field">
-          <input type="text" placeholder="Email subject" required>
-          <span class="focus"></span>
-        </div>
-        <div class="textarea-field">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-          <span class="focus"></span>
-        </div>
-        <div class="btn-box">
-          <button type="submit" class="btn">submit</button>
-        </div>
+    <form action="http://localhost:5000/contact" method="post">
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="tel" name="mobileNumber" placeholder="Mobile Number" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="text" name="subject" placeholder="Email Subject" required>
+                <span class="focus"></span>
+            </div>
+            <div class="textarea-field">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <span class="focus"></span>
+            </div>
+            <div class="response-message">
+              <!-- Placeholder for the response message -->
+            </div>
+            <div class="btn-box">
+                <button type="submit" class="btn">Submit</button>
+            </div>
         </div>
     </form>
   </section>
