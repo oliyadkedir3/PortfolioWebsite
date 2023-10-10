@@ -48,9 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch(apiUrl, {
           method: "POST",
           body: formData,
-          headers: {
-            "Content-Type": "application/json",
-          },
       })
           .then((response) => response.json()) // Assuming the server responds with JSON
           .then((data) => {
