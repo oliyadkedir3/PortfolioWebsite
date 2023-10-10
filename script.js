@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault(); // Prevent the default form submission behavior
 
       const formData = new FormData(form);
-      const apiUrl = "https://portfolio-website-backend-8c5um9jo3-oliyad-kedirs-projects.vercel.app/contact";
+      const apiUrl = "http://localhost:5000/contact";
       // Send the form data to the server using Fetch API
       fetch(apiUrl, {
           method: "POST",
