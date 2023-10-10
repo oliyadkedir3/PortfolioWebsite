@@ -632,6 +632,11 @@ width: 100%;
 .contact form .btn-box .btns .btn {
   cursor: pointer;
 }
+
+.response-message {
+  font-size: 25px;
+  color: white;
+}
 .footer {
   display: flex;
   justify-content: space-between;
