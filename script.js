@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("subject", subject);
     formData.append("message", message);
     console.log(formData.get("fullName"));
-    const apiUrl = "https://portfolio-website-three-neon.vercel.app/contact";
+    const apiUrl = "https://portfolio-website-backend-ochre.vercel.app/contact";
     
     // Send the form data to the server using Fetch API
     fetch(apiUrl, {
