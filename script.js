@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .catch((error) => {
               console.error("Error:", error);
-              responseMessage.textContent = "An error occurred. Please try again later.";
+              responseMessage.textContent = `An error occurred. Please try again later. ${error}`;
               responseMessage.classList.remove("success");
               responseMessage.classList.add("error");
           });
