@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // // Serve the static files from the React app
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 
 const contactEmail = nodemailer.createTransport({
@@ -61,11 +61,11 @@ router.post("/contact", (req, res) => {
 app.use("/", router);
 
 // // Handles any requests that don't match the above
-// app.get('*', (req,res) =>{
-//     res.sendFile(path.join(__dirname+'/build/index.html'));
-// });
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/build/index.html'));
+});
 
-const port = 5000;
+const port = 80 || 5000;
 app.listen(port);
 
 console.log('App is listening on port ' + port);
