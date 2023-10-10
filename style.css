@@ -1215,7 +1215,26 @@ color: var(--main-color);
         text-align: center;
       }
     }
-
+@media(max-width: 400px) {
+  .home{
+    width: 100%;
+   }
+   .about{
+    width: 100%;
+   }
+   .skills{
+    width: 100%;
+   }
+   .contact{
+    width: 100%;
+   }
+   .education{
+    width: 100%;
+   }
+   .footer{
+    width: 100%;
+   }
+}
 @media(max-width: 360px) {
   html {
     font-size: 50%;
@@ -1240,9 +1259,7 @@ color: var(--main-color);
  .footer{
   width: 100%;
  }
-  * {
-    align-items: center;
-  }
+  
  .skills {
   margin-top: -50px;
 }
