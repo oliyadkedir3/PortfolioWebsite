@@ -36,37 +36,67 @@ header.classList.toggle('sticky',window.scrollY> 100);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
   const responseMessage = document.querySelector(".response-message");
 
-  form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the default form submission behavior
+  const form = document.querySelector("form");
+  const fullNameInput = document.getElementById("fullName");
+  const mobileNumberInput = document.getElementById("mobileNumber");
+  const emailInput = document.getElementById("email");
+  const subjectInput = document.getElementById("subject");
+  const messageInput = document.getElementById("message");
 
-      const formData = new FormData(form);
-      const apiUrl = "https://portfolio-website-backend-ochre.vercel.app/contact";
-      // Send the form data to the server using Fetch API
-      fetch(apiUrl, {
-          method: "POST",
-          body: formData,
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    // Get values from the input elements
+    const fullName = fullNameInput.value;
+    const mobileNumber = mobileNumberInput.value;
+    const email = emailInput.value;
+    const subject = subjectInput.value;
+    const message = messageInput.value;
+
+    console.log(fullName);
+    console.log(mobileNumber);
+    console.log(email);
+    console.log(subject);
+    console.log(message);
+
+
+    // Construct your own data object
+    const formData = new FormData();
+    formData.append("fullName", fullName);
+    formData.append("mobileNumber", mobileNumber);
+    formData.append("email", email);
+    formData.append("subject", subject);
+    formData.append("message", message);
+    console.log(formData.get("fullName"));
+    const apiUrl = "https://portfolio-website-three-neon.vercel.app/contact";
+    
+    // Send the form data to the server using Fetch API
+    fetch(apiUrl, {
+      method: "POST",
+      body: formData,
+      // headers: {
+      //   'Content-Type': 'application/x-www-form-urlencoded',
+      // },
+    }).then((response) => response.json())
+      .then((data) => {
+        // Handle the server response
+        if (data.code === 200) {
+          responseMessage.textContent = "Message sent successfully!";
+          responseMessage.classList.remove("error");
+          responseMessage.classList.add("success");
+        } else {
+          responseMessage.textContent = "Error sending the message. Please try again.";
+          responseMessage.classList.remove("success");
+          responseMessage.classList.add("error");
+        }
       })
-          .then((response) => response.json()) // Assuming the server responds with JSON
-          .then((data) => {
-              // Handle the server response
-              if (data.code === 200) {
-                  responseMessage.textContent = "Message sent successfully!";
-                  responseMessage.classList.remove("error");
-                  responseMessage.classList.add("success");
-              } else {
-                  responseMessage.textContent = "Error sending message. Please try again.";
-                  responseMessage.classList.remove("success");
-                  responseMessage.classList.add("error");
-              }
-          })
-          .catch((error) => {
-              console.error("Error:", error);
-              responseMessage.textContent = `An error occurred. Please try again later. ${error}`;
-              responseMessage.classList.remove("success");
-              responseMessage.classList.add("error");
-          });
+      .catch((error) => {
+        console.error("Error:", error);
+        responseMessage.textContent = `An error occurred. Please try again later. ${error}`;
+        responseMessage.classList.remove("success");
+        responseMessage.classList.add("error");
+      });
   });
 });
