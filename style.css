@@ -568,6 +568,60 @@ width: 100%;
 .skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
   width: 70%;
 }
+
+.projects {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.projects a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.projects a:hover {
+  background-color: var(--bg-color);
+}
+
+.projects img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.projects p {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  position: absolute;
+  font-size: 16px;
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  text-align: center;
+  transform: translate(0, 0);
+  transition: transform 0.3s ease-in;
+}
+
+.projects .Websearch:hover .WebsearchPara,
+.projects .FlightWeb:hover .FlightPara,
+.projects .Ecommerce:hover .EcommercePara {
+  opacity: 1;
+  transform: translate(0, -117%);
+}
+
+
 .contact {
    min-height: auto;
    padding-bottom: 7rem;
