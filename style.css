@@ -1286,22 +1286,27 @@ color: var(--main-color);
    .about{
     width: 100%;
     justify-content: center;
+    margin-left: 23px;
    }
    .skills{
     width: 100%;
     justify-content: center;
+    margin-left: 23px;
    }
    .contact{
     width: 100%;
     justify-content: center;
+    margin-left: 23px;
    }
    .education{
     width: 100%;
     justify-content: center;
+    margin-left: 23px;
    }
    .footer{
     width: 100%;
     justify-content: center;
+    margin-left: 23px;
    }
 }
 @media(max-width: 360px) {
