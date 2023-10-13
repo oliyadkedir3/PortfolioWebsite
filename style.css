@@ -627,6 +627,7 @@ width: 100%;
 .projects .FlightWeb:hover,
 .projects .Ecommerce:hover  {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
