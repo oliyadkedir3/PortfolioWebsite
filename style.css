@@ -574,6 +574,7 @@ width: 100%;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .projects a {
@@ -620,6 +621,12 @@ width: 100%;
 .projects .Ecommerce:hover .EcommercePara {
   opacity: 1;
   transform: translate(0, -117%);
+}
+
+.projects .Websearch:hover,
+.projects .FlightWeb:hover,
+.projects .Ecommerce:hover  {
+  margin-bottom: 10px;
 }
 
 
