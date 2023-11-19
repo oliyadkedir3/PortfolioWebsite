@@ -573,6 +573,8 @@ width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .projects a {
@@ -619,6 +621,13 @@ width: 100%;
 .projects .Ecommerce:hover .EcommercePara {
   opacity: 1;
   transform: translate(0, -117%);
+}
+
+.projects .Websearch:hover,
+.projects .FlightWeb:hover,
+.projects .Ecommerce:hover  {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
@@ -1272,21 +1281,32 @@ color: var(--main-color);
 @media(max-width: 400px) {
   .home{
     width: 100%;
+    justify-content: center;
    }
    .about{
     width: 100%;
+    justify-content: center;
+    margin-left: 23px;
    }
    .skills{
     width: 100%;
+    justify-content: center;
+    margin-left: 23px;
    }
    .contact{
     width: 100%;
+    justify-content: center;
+    margin-left: 23px;
    }
    .education{
     width: 100%;
+    justify-content: center;
+    margin-left: 23px;
    }
    .footer{
     width: 100%;
+    justify-content: center;
+    margin-left: 23px;
    }
 }
 @media(max-width: 360px) {
