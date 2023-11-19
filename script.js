@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }).then((response) => response.json())
       .then((data) => {
         // Handle the server response
+        
         if (data.code === 200) {
           responseMessage.textContent = "Message sent successfully!";
           responseMessage.classList.remove("error");
